@@ -15,7 +15,6 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     });
   })
   .catch(function(error) {
- 
     document.getElementById('error').textContent = "Something went wrong. Please try again.";
-    console.log("Error: ", error);
+    console.log("Error:",error);
   });
