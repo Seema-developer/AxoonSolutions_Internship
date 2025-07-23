@@ -62,10 +62,12 @@ nav .nav-lists ul a:hover{
 #hamburger{
     font-size: 35px;
     display: none;
+    margin-right: 20px;
 }
 
 /* responsive navbar section */
 .responsive-nav{
+    padding-top: 72px;
     background-color: #5E3BEE;
     max-height: 0;
     overflow: hidden;
@@ -97,12 +99,6 @@ nav .nav-lists ul a:hover{
      width: 100%;
 }
 
-/* hero section */
-.hero-content{
-    animation: slideFadeUp 1s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
 /* hero-content */
 .hero-section, .about-section{
     display: flex;
@@ -114,7 +110,7 @@ nav .nav-lists ul a:hover{
 
 }
 .hero-section{
-    padding-top: 150px;
+    padding-top: 120px;
 }
 .about-section{
     flex-direction: row-reverse;
@@ -163,8 +159,6 @@ nav .nav-lists ul a:hover{
    box-shadow: 10px 10px 15px rgba(94, 199, 225, 1);
    cursor: pointer;
    transition: transform 0.4s ease, box-shadow 0.4s ease;
-   animation: zoomFadeIn 1s ease-out forwards;
-   animation: float 3s ease-in-out infinite;
 }
 
 .hero-img img{
@@ -185,7 +179,7 @@ nav .nav-lists ul a:hover{
 /* project-section + expertise-section......*/
 #expertise-section, #project-section, #testimonial-section, #contact-section{
     background-color: white;
-    padding: 70px 100px;
+    padding: 70px 90px;
 }
  #testimonial-section{
     background-color: #e7f5fb;
@@ -245,6 +239,7 @@ nav .nav-lists ul a:hover{
    cursor: pointer;
 }
 
+
 /* project section */
  .project-card {
   flex: 1 1 30%;
@@ -290,7 +285,7 @@ nav .nav-lists ul a:hover{
     padding:3px 20px;
 }
 .project-content a{
-    color: #000;
+    color: #5E3BEE;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -311,7 +306,7 @@ nav .nav-lists ul a:hover{
 .testimonial-card{
     flex: 1 1 22%;
     min-width: 250px;
-    height: 185px;
+    height: 194px;
     background-color: rgb(244, 255, 255);
     border-radius: 8px;
     padding: 20px;
@@ -457,42 +452,6 @@ footer .footer-lists ul a:hover{
 
 
 
-/* key frames */
-@keyframes zoomFadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* float animation--- */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* for expertise-card cards */
 @keyframes cardSlideFade {
   0% {
@@ -515,7 +474,6 @@ footer .footer-lists ul a:hover{
     transform: scale(1);
   }
 }
-
 
 
 
@@ -580,14 +538,31 @@ footer .footer-lists ul a:hover{
     nav{
         padding:10px 50px ;
     }
+    
+    nav .nav-lists ul{
+        display: flex;
+        gap: 20px !important;
+    }
 }
 
 @media (max-width:786px) {
     #hamburger{
         display: block;
+        cursor: pointer;
+        z-index: 1100;
     }
-    .nav-lists, .contact-btn{
+
+    nav .nav-lists,
+    nav .contact-btn {
         display: none;
+    }
+    .responsive-nav ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+    }
+    .responsive-nav a span {
+        padding-left: 5px;
     }
     .about-content{
         width: 75%;
@@ -598,7 +573,7 @@ footer .footer-lists ul a:hover{
         flex-direction: column-reverse;
     }
     .hero-section{
-        padding-top: 150px;
+        padding-top: 105px;
     }
     .hero-content, .about-content{
         text-align: center;
@@ -615,29 +590,52 @@ footer .footer-lists ul a:hover{
         font-size: 20px;
     }
     .footer-section{
-        height: 460px;
+        height: auto;
     }
 }
 @media (max-width:655px){
+    nav{
+        padding:10px 40px ;
+    }
     .expertise-card{
         min-width: 350px;
     }
     .form-container{
         width: 100%;
     }
+    .footer-section {
+        height: auto;
+        padding-bottom: 30px;
+    }
 }
 
 @media (max-width:600px){
     .hero-img, #about-img{
-        width: 350px;
-        height: 350px;
-        margin-top: 35px;
+        width: 300px;
+        height: 300px;
+        margin-top: 20px;
     }
     .hero-content h1, .about-content h1{
-        font-size: 35px;
+        font-size: 30px;
     }
     .hero-content p, .about-content p{
-        font-size: 18px;
+         font-size: 16px;
+    }
+    .footer-section {
+        height: auto;
+        padding-bottom: 30px;
+    }
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .privacy-section {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .privacy-section .privacy ul {
+        justify-content: center;
     }
     .form-container .row1{
         display: flex;
@@ -649,11 +647,64 @@ footer .footer-lists ul a:hover{
     }
 } 
 
+@media (max-width:520px){
+    .project-heading{
+        flex-direction: column;
+        margin-bottom: 45px;
+    }
+}
+
 @media (max-width:480px){
+     nav{
+        padding:10px 22px ;
+    }
+    #expertise-section, #project-section, #testimonial-section, #contact-section{
+        padding: 70px 25px;
+    }
+    .expertise-heading{
+        text-align: center;
+    }
+    .project-card{
+         height: 425px;
+     }
+     .project-content{
+     padding:3px 10px;
+    }
+    .project-card img{
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .project-btn button{
+        padding: 12px;
+    }
+    .project-btn button a{
+        font-size: 15px;
+    }
     .expertise-card{
         min-width: 300px;
     }
     .footer-section{
         height: 550px;
+    }
+}
+
+@media (max-width:400px) {
+    .hero-img, #about-img{
+        width: 270px ;
+        height: 270px ;
+    }
+    #expertise-section, #project-section, #testimonial-section, #contact-section{
+        padding: 70px 25px;
+    }
+    .expertise-card{
+        min-width: 260px;
+    }
+    .testimonial-card{
+        height: 210px;
+    }
+    .footer-section{
+        height: auto;
     }
 }
