@@ -1,0 +1,85 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: black;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.weather-container {
+    background: white;
+    backdrop-filter: blur(15px);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.weather-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: green;
+}
+
+input[type="text"] {
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background-color: rgb(214, 211, 211);
+}
+
+button {
+    padding: 0.8rem 2rem;
+    background: green;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: rgb(3, 170, 3);
+}
+
+.weather-result {
+    margin-top: 1.5rem;
+    color: green;
+}
+
+.weather-result img {
+    width: 80px;
+    height: 80px;
+}
+
+.loading {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #f1c40f;
+}
+
+.error {
+    color: #e74c3c;
+    margin-top: 1rem;
+}
+
+@media (max-width: 500px) {
+    .weather-container {
+    padding: 1rem;
+    }
+}
